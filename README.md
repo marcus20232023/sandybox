@@ -22,7 +22,7 @@
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/sandybox.git
+    git clone https://github.com/marcus20232023/sandybox.git
     cd sandybox
     ```
 
@@ -51,7 +51,7 @@ Add this to your MCP client configuration (e.g., `claude_desktop_config.json` or
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/yourusername/sandybox.git",
+        "git+https://github.com/marcus20232023/sandybox.git",
         "sandybox"
       ]
     }
