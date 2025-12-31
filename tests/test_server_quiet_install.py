@@ -15,6 +15,7 @@ def test_quiet_install():
     )
     
     assert "/usr/bin/file" in output
+    # Check for summary message
+    assert "[System] Installed packages: file" in output
     # Check that we don't see typical apt output like "Reading package lists..."
-    # although -qq might still print errors, it shouldn't print "Reading package lists..."
     assert "Reading package lists..." not in output

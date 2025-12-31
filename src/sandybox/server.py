@@ -165,7 +165,12 @@ def execute_command(
         # Install packages if requested
         if packages:
             pkg_str = " ".join(packages)
-            full_command += f"apt-get update -qq && apt-get install -y -qq {pkg_str} && "
+            # Try to install silently; on success print summary, on fail print error and exit
+            install_cmd = (
+                f"apt-get update -qq >/dev/null 2>&1 && "
+                f"apt-get install -y -qq -o Dpkg::Use-Pty=0 {pkg_str} >/dev/null 2>&1"
+            )
+            full_command += f"({install_cmd} && echo '[System] Installed packages: {pkg_str}') || (echo '[System] Package installation failed' && exit 1) && "
         
         full_command += command
 
