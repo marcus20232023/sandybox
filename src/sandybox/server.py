@@ -165,7 +165,7 @@ def execute_command(
         # Install packages if requested
         if packages:
             pkg_str = " ".join(packages)
-            full_command += f"apt-get update && apt-get install -y {pkg_str} && "
+            full_command += f"apt-get update -qq && apt-get install -y -qq {pkg_str} && "
         
         full_command += command
 
