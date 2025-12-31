@@ -12,9 +12,10 @@
 
 ## Prerequisites
 
-*   **Linux OS** (Recommended) or system with Podman support.
-*   **Podman:** Must be installed and running in rootless mode.
-    *   Verify with: `systemctl --user status podman.socket`
+*   **Operating System:** Linux, macOS, or Windows.
+*   **Podman:** Must be installed and running.
+    *   **Linux:** Install `podman` and ensure the socket is active (e.g., `systemctl --user enable --now podman.socket`).
+    *   **macOS / Windows:** Install [Podman Desktop](https://podman-desktop.io/) or the CLI. Run `podman machine init` and `podman machine start`.
 *   **Python 3.12+**
 *   **uv:** For dependency management (optional but recommended).
 
